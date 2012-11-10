@@ -1,0 +1,45 @@
+*{other cases }*
+*{  #{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{welcome /} }* 
+
+*{case 4}*
+*{
+#{ifErrors}
+   <h1>Oops…</h1>
+ 
+   #{errors}
+       <li>${error}</li>
+   #{/errors}
+#{/ifErrors}
+#{form @Application.form()}
+   <div>
+      Name: <input type="text" name="user" value="${flash.user}" />
+   </div>
+   <div>
+      Age: <input type="text" name="age" value="${flash.age}" /> 
+   </div>
+   <div>
+      <input type="submit" value="Submit" /> 
+   </div>
+#{/form} }*
+
+*{case 5}*
+#{ifErrors}
+   <h1>Oops…</h1>
+#{/ifErrors}
+ 
+#{form @Application.form()}
+   <div>
+      Name: <input type="text" name="user" value="${flash.user}" />
+      <span class="error">#{error 'name' /}</span>
+   </div>
+   <div>
+      Age: <input type="text" name="age" value="${flash.age}" /> 
+      <span class="error">#{error 'age' /}</span>
+   </div>
+   <div>
+      <input type="submit" value="Submit" /> 
+   </div>
+#{/form}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="${_response_encoding}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        #{get 'moreScripts' /}
+    </head>
+    <body>
+    
+    *{other cases}*
+    *{
+    <div>
+      Name: <input type="text" name="user" value="${flash.name}" />
+   </div>
+   <div>
+      Age: <input type="text" name="age" value="${flash.age}" /> 
+   </div>
+   <div>
+      <input type="submit" value="submit" /> 
+   </div>
+    }*
+    *{case 4,5}*
+    
+   #{ifErrors}
+   <h1>Oops…</h1>
+ 
+   #{errors}
+       <li>${error}</li>
+   #{/errors}
+#{/ifErrors}
+ 
+#{form @Application.form()}
+   <div>
+      Name: <input type="text" name="user" value="${flash.name}" />
+   </div>
+   <div>
+      Age: <input type="text" name="age" value="${flash.age}" /> 
+   </div>
+   <div>
+      <input type="submit" value="submit" /> 
+   </div>
+#{/form} 
+
+
+
+ 
+           
+
+    </body>
+</html>

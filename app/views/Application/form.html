@@ -1,0 +1,29 @@
+<html>
+<body>
+*{ //case3
+#{ifErrors}
+ 
+   <h1>Oops…</h1>
+ 
+   #{errors}
+       <li>${error}</li>
+   #{/errors}
+ 
+#{/ifErrors}
+#{else}
+ 
+   Hello ${user}
+ 
+#{/else}
+}* 
+
+
+*{case 4}*
+
+ 
+ 
+   Hello ${user} your age is ${age}
+ 
+
+</body>
+</html>
